@@ -1,0 +1,148 @@
+
+:root {
+    --headerBg: #FFFBF5;
+    --navBg: #F7EFE5;
+    --mainBg: #C3ACD0;
+    --asideBg: #7743DB;
+    --toggleButton: #000;
+    --footer: #a881f0;
+    --h1: black;
+}
+
+.darkmode {
+    --headerBg: #0F0F0F;
+    --navBg: #232D3F;
+    --mainBg: #005B41;
+    --asideBg: #008170;
+    --toggleButton: #fff;
+    --footer: #5300ed;
+    --h1: white;
+}
+
+body {
+    width: 100vw;
+    margin: 0;
+}
+
+header {
+    background-color: var(--headerBg);
+    height: 100px;
+    padding: 14px;
+}
+
+h1 {
+    color: var(--h1);
+}
+
+nav {
+    background-color: var(--navBg);
+    width: 25%;
+}
+
+main {
+    background-color: var(--mainBg);
+    width: 50%;
+}
+
+aside {
+    background-color: var(--navBg);
+    width: 25%;
+}
+
+footer {
+    background-color: var(--footer);
+    width: 100%;
+    height: 50px;
+}
+
+.flexContainer {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+#darkmode {
+    display: none;
+}
+
+.darkButton {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 20px;
+    border: 1px solid var(--toggleButton);
+    border-radius: 12px;
+}
+.darkButton::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 16px;
+    background-color: var(--toggleButton);
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 400ms;
+}
+
+#darkmode:checked ~ .darkButton::after {
+    left: 31px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    body {
+      background-color: blue;
+    }
+
+    .flexContainer {
+        flex-wrap: wrap;
+    }
+
+    nav, main, aside {
+        width: 100%;
+
+    }
+    nav {
+        width: 100%;
+        height: 75px;
+    }
+
+    main {
+        width: 50%;
+        height: 175px;
+    }
+    }
+
+    aside {
+        width: 50%;
+        height: 175px;
+    }
+    
+
+
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: #000;
+    }
+
+    .flexContainer {
+        flex-direction: column;
+    }
+
+    nav, main, aside {
+        width: 100%;
+
+    }
+    nav {
+        height: 75px;
+    }
+
+    main {
+        height: 500px;
+    }
+
+    aside {
+        height: 50px;
+    }
+  }
